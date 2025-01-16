@@ -1,0 +1,20 @@
+.sign-in-container {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Target Clerk's button elements */
+.cl-rootBox button {
+  background-color: #7ee281 !important; /* Green */
+  border: none !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s !important;
+}
+
+.cl-rootBox button:hover {
+  background-color: #9af49e !important; /* Darker green on hover */
+}
+
