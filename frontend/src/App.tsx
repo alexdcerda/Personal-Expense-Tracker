@@ -1,9 +1,12 @@
 import './App.css'
-import {BrowserRouter as Router, Routes, Route, Link, Navigate} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Dashboard } from './pages/dashboard'
 import { FinancialRecordsProvider } from './contexts/financial-record-context'
 import { SignedIn, UserButton, SignedOut, SignUpButton, SignInButton } from '@clerk/clerk-react'
-import Analytics from './pages/analyics/analytics.tsx'
+import { Stocks } from './pages/stocks/stocks'
+import { RetirementACC } from './pages/401k/401k'
+import { RothIRA } from './pages/rothira/rothira'
+import { Cryptocurrency } from './pages/cryptocurrency/crypto'
 
 
 function App() {
@@ -20,8 +23,11 @@ function App() {
         }}>
           <div style={{ display: "flex", gap: "1rem" }}>
             <Link to="/">Dashboard</Link>
-            <Link to="/analytics">Analytics</Link>
-          </div>
+            <Link to="/stocks">Stocks</Link>
+            <Link to="/rothira">Roth IRA</Link>
+            <Link to="/401k">401(K)</Link>
+            <Link to="/crypto">Crypto Currency</Link>
+          </div>  
           
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <SignedOut>
@@ -42,7 +48,10 @@ function App() {
               </FinancialRecordsProvider>
             }
           />
-          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/stocks" element={<Stocks />} />
+          <Route path="/401k" element={<RetirementACC />} />
+          <Route path="/rothira" element={<RothIRA />} />
+          <Route path="/crypto" element={<Cryptocurrency />} />
         </Routes>
       </div>
     </Router>
